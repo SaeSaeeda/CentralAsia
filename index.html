@@ -179,6 +179,8 @@ textarea.fi{min-height:80px;resize:vertical;line-height:1.6}
 .gk-month{border-radius:8px;padding:.625rem .5rem;text-align:center}
 .gk-m-name{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem}
 .gk-m-desc{font-size:.68rem;line-height:1.4}
+.tc-link{display:block;text-align:center;padding:.6rem 1rem;background:var(--b0);color:var(--gold);font-size:.75rem;font-weight:500;text-decoration:none;border-top:1px solid var(--b0);transition:background .15s;letter-spacing:.02em}
+.tc-link:hover{background:var(--b1)}
 /* PACK LIST */
 .pl-intro{background:var(--card);border:1px solid var(--b0);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
 .pl-intro-stat{text-align:center}
@@ -196,6 +198,39 @@ textarea.fi{min-height:80px;resize:vertical;line-height:1.6}
 .pl-rx{background:rgba(224,92,92,.12);color:#C04040}
 .pl-must{background:rgba(29,158,117,.12);color:#1D9E75}
 .pl-nice{background:rgba(139,107,20,.1);color:#8B6B14}
+/* RESOURCES */
+.res-sec-title{font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--t2);margin-bottom:.875rem;font-weight:600}
+.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.75rem}
+.art-card{background:var(--card);border:1px solid var(--b0);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.art-body{padding:1.125rem;flex:1}
+.art-source{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--t2);margin-bottom:.3rem}
+.art-title{font-size:.9rem;font-weight:500;color:var(--t0);margin-bottom:.75rem;line-height:1.4}
+.art-pts{list-style:none}
+.art-pts li{font-size:.77rem;color:var(--t1);padding:.25rem 0 .25rem .9rem;position:relative;line-height:1.5;border-bottom:1px solid var(--b0)}
+.art-pts li:last-child{border:none}
+.art-pts li:before{content:'→';position:absolute;left:0;color:var(--t2);font-size:.7rem;top:.35rem}
+.art-link{display:block;padding:.625rem;background:var(--b0);text-align:center;font-size:.75rem;color:var(--gold);text-decoration:none;font-weight:500;transition:background .15s;border-top:1px solid var(--b0)}
+.art-link:hover{background:var(--b1)}
+.cres-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.75rem}
+.cres{background:var(--card);border:1px solid var(--b0);border-radius:12px;padding:1.125rem}
+.cres-hdr{font-size:.875rem;font-weight:500;margin-bottom:.875rem;padding-bottom:.625rem;border-bottom:1px solid var(--b0)}
+.cres-item{margin-bottom:.625rem}
+.cres-name{font-size:.78rem;font-weight:500;color:var(--t0);margin-bottom:.1rem}
+.cres-desc{font-size:.7rem;color:var(--t2);line-height:1.4;margin-bottom:.15rem}
+.cres-a{font-size:.72rem;color:var(--gold);text-decoration:none}
+.cres-a:hover{text-decoration:underline}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.dcard{background:var(--card);border:1px solid var(--b0);border-radius:12px;padding:1.25rem}
+.dcard-title{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--t2);font-weight:600;margin-bottom:.875rem}
+.drow{display:flex;justify-content:space-between;align-items:baseline;padding:.35rem 0;border-bottom:1px solid var(--b0);font-size:.8rem;gap:1rem}
+.drow:last-child{border:none}
+.drow-label{color:var(--t1);line-height:1.4}
+.drow-val{color:var(--t0);font-weight:500;white-space:nowrap;text-align:right;font-size:.78rem}
+.drow-note{font-size:.68rem;color:var(--t2);margin-top:.05rem}
+.dtag{display:inline-block;padding:.1rem .45rem;border-radius:3px;font-size:.62rem;font-weight:600}
+.tag-easy{background:rgba(29,158,117,.12);color:#1D9E75}
+.tag-mod{background:rgba(232,155,38,.12);color:#E89B26}
+.tag-hard{background:rgba(224,92,92,.12);color:#C04040}
 </style>
 </head>
 <body>
@@ -221,6 +256,7 @@ textarea.fi{min-height:80px;resize:vertical;line-height:1.6}
     <button class="nb" onclick="showTab('tours',this)">Tours</button>
     <button class="nb" onclick="showTab('gk',this)">Good to Know</button>
     <button class="nb" onclick="showTab('pack',this)">Pack List</button>
+    <button class="nb" onclick="showTab('res',this)">Resources</button>
     <button class="nb add" onclick="openMd()">+ Add Stop</button>
   </nav>
 </div>
@@ -660,6 +696,309 @@ textarea.fi{min-height:80px;resize:vertical;line-height:1.6}
     </div>
   </div>
 
+  <div id="t-res" class="tab">
+
+    <!-- FEATURED READS -->
+    <div class="res-sec-title">Articles worth reading</div>
+    <div class="art-grid">
+
+      <div class="art-card">
+        <div class="art-body">
+          <div class="art-source">Journal of Nomads · Cynthia Bil</div>
+          <div class="art-title">Horse Riding in Kyrgyzstan — Everything You Need to Know + 9 Best Destinations</div>
+          <ul class="art-pts">
+            <li>Only stallions are used for riding — mares are used for kumys and breeding. You will see the mares and foals free in the pastures</li>
+            <li>Say <b>"chu"</b> to go and <b>"trrrrrr"</b> or <b>"dak dak"</b> to stop. Learn these before you get on</li>
+            <li>Never wear a rain poncho on horseback — it scares the horses. Use a waterproof jacket only</li>
+            <li>Don't let horses eat along the trail or they'll decide they're the boss</li>
+            <li>Book ahead for July–August — one of the busiest seasons, horses book out</li>
+            <li>Check horse health before agreeing to any trip near Ala Kul Lake — exploitation is documented there</li>
+            <li>Border permits required for Kel Suu Lake and Chatyr Kul — apply via CBT Naryn email, 2 weeks ahead, costs 1,000–2,000 KGS</li>
+            <li>9 best destinations: Song Kul, Tash Rabat, Sary Chelek, Alay/Osh, Arslanbob, Kol Ukok, Chon Kemin, Kel Suu, Yrdyk Lakes</li>
+            <li>Arslanbob 3-day CBT tour: ~30,000 KGS (~€300) all-in — one of the few published prices</li>
+          </ul>
+        </div>
+        <a href="https://www.journalofnomads.com/horse-riding-in-kyrgyzstan/" target="_blank" class="art-link">Read full article ↗</a>
+      </div>
+
+      <div class="art-card">
+        <div class="art-body">
+          <div class="art-source">Discover Kyrgyzstan · Usman</div>
+          <div class="art-title">Horseback Trekking in Kyrgyzstan — Routes, Prices, and Packing</div>
+          <ul class="art-pts">
+            <li>Short ride (Ala-Archa, half day): <b>$25–50/person</b></li>
+            <li>Issyk-Kul valley ride (1 day): <b>$60–90/person</b> — guide, horse, picnic lunch</li>
+            <li>Song Kul 3 days: <b>$150–250/person</b> — guide, meals, yurt stays (note: CBT official price is $425)</li>
+            <li>Tien Shan expedition (5–7 days): <b>$400–600/person</b></li>
+            <li>Naryn to Tash Rabat (2–3 days): <b>$120–200/person</b></li>
+            <li>Prices vary by season, group size, and whether you book direct or through an operator</li>
+            <li>Bring cash in Kyrgyz som — rural areas don't take cards</li>
+            <li>Start with a short trek if you are a new rider</li>
+          </ul>
+        </div>
+        <a href="https://www.discoverkyrgyzstan.org/horseback-trekking-in-kyrgyzstan-routes-prices-and-packing/" target="_blank" class="art-link">Read full article ↗</a>
+      </div>
+
+      <div class="art-card">
+        <div class="art-body">
+          <div class="art-source">Discover Kyrgyzstan · Usman</div>
+          <div class="art-title">Unforgettable Road Trips Across Kyrgyzstan's Mountain Passes</div>
+          <ul class="art-pts">
+            <li><b>Kyzyl-Art Pass (4,280m)</b> — entry to Pamir Highway from Kyrgyzstan, Hard, permit required</li>
+            <li><b>Barskoon Pass (3,756m)</b> — Issyk-Kul to south, Soviet monuments, Yuri Gagarin bust, Moderate</li>
+            <li><b>Torugart Pass (3,752m)</b> — Silk Road route to China, permit required, Moderate</li>
+            <li><b>Too-Ashu Pass (3,586m)</b> — Bishkek to Osh, hairpin bends, Hard</li>
+            <li><b>Shamsi Pass (3,570m)</b> — quiet, connects to Chon-Kemin Valley, Easy</li>
+            <li><b>Ala-Bel Pass (3,184m)</b> — Bishkek to Suusamyr Valley, Easy, good for first-timers</li>
+            <li>Rent a 4x4 SUV — essential for most passes</li>
+            <li>Offline maps essential — signal is limited or nonexistent</li>
+          </ul>
+        </div>
+        <a href="https://www.discoverkyrgyzstan.org/unforgettable-road-trips-across-kyrgyzstans-mountain-passes/" target="_blank" class="art-link">Read full article ↗</a>
+      </div>
+
+      <div class="art-card">
+        <div class="art-body">
+          <div class="art-source">BucketListly Blog · Pete R.</div>
+          <div class="art-title">One Month in Central Asia: The Ultimate Backpacking Route</div>
+          <ul class="art-pts">
+            <li>Daily budget: <b>$35–55 USD/person</b> — dorms, street food, cheapest transport. Not cheap, not expensive</li>
+            <li>Bishkek → Osh cheapest option: <b>fly for ~$30 USD</b>. Bus takes up to 8 hours. Worth flying to save time</li>
+            <li>Tajikistan e-visa: <b>$50 + $20 GBAO permit</b> = $70 total. GBAO permit required for Pamir Highway. Apply before arriving in Osh — no printing facilities after that</li>
+            <li>Khorog → Dushanbe: <b>marshrutka up to 16 hours</b>, leaves early morning. Or fly on a small aircraft (see the mountains from above)</li>
+            <li><b>Osh Guesthouse</b> is the main hub for organising Pamir jeep trips and finding other backpackers to share with</li>
+            <li><b>Caravanistan Forum</b> — best online resource for finding jeep partners ahead of time</li>
+            <li>No internet whatsoever on the Pamir Highway until Dushanbe — tell people you will be gone for a week</li>
+            <li>Song Kul: organise through <b>CBT or Shepherd's Life</b> in Kochkor. More people = cheaper per person</li>
+            <li>Uzbekistan SIM cards only available in Tashkent — get one before leaving the capital</li>
+          </ul>
+        </div>
+        <a href="https://www.bucketlistly.blog/posts/central-asia-one-month-backpacking-itinerary" target="_blank" class="art-link">Read full article ↗</a>
+      </div>
+
+      <div class="art-card">
+        <div class="art-body">
+          <div class="art-source">Against the Compass · Joan Torres</div>
+          <div class="art-title">Travel to Central Asia — Which Country Should You Visit?</div>
+          <ul class="art-pts">
+            <li><b>Kyrgyzstan</b> = best overall. Cheapest, best tourist infrastructure, lush mountains, nomads everywhere. Recommended first choice</li>
+            <li><b>Tajikistan</b> = wilder and more remote than KG. Pamir Highway is the highlight. More expensive due to 4WD requirement everywhere. Great for off-the-beaten-path</li>
+            <li><b>Uzbekistan</b> = most tourist-friendly, most accessible. Silk Road cities are extraordinary but summer (40°C+) is genuinely brutal in cities</li>
+            <li><b>Kazakhstan</b> = vast, Westernized, weird offbeat attractions. Soviet train across the steppe is an experience in itself</li>
+            <li>Expert tip: if you only have 3 weeks, visit <b>maximum 2 countries, preferably 1</b>. Rushing Central Asia destroys the experience</li>
+            <li>Best season by country: KG + TJ = June–August (mountains). UZ = spring or autumn (cities). Avoid UZ cities in summer</li>
+            <li>From Americas: fly via <b>Istanbul (Turkish Airlines)</b> or Moscow (Aeroflot) — both well connected</li>
+            <li>From Europe: <b>Pegasus Airlines</b> is cheapest, direct flights to Bishkek and Almaty</li>
+            <li>Best guidebooks: <b>Bradt Guides</b> (one per country, most detailed). Lonely Planet good for overview across all 5</li>
+            <li>Best visa/border resource: <b>Caravanistan</b> — updated, community-maintained, essential</li>
+          </ul>
+        </div>
+        <a href="https://againstthecompass.com/en/travel-central-asia/" target="_blank" class="art-link">Read full article ↗</a>
+      </div>
+
+      <div class="art-card">
+        <div class="art-body">
+          <div class="art-source">Pine Tree Poet · George Callahan</div>
+          <div class="art-title">My 30-Day Central Asia Road Trip Itinerary</div>
+          <ul class="art-pts">
+            <li>14 days Kyrgyzstan, 10 days Tajikistan, 7 days Uzbekistan — and KG still felt rushed</li>
+            <li><b>Hiring a driver for KG and TJ is the move</b> — George used Musa (KG) and his brother (TJ), arranged through the same contact. Driver doubles as translator, fixer, and cultural guide</li>
+            <li>Eagle hunting show in <b>Bokonbaevo</b> — authentic, few tourists, one of the top highlights. Your driver needs to know to arrange it</li>
+            <li>Galloping on horseback at Song Kul to get back to camp — one of the best moments of the entire trip</li>
+            <li>Hiked to <b>16,000 feet (4,877m)</b> in Tajikistan's Bartang Gorge area — the mountains are genuinely enormous</li>
+            <li>Tea with locals overlooking <b>Afghanistan across the Panj River</b> in the Wakhan — strangers invite you in. Accept it</li>
+            <li><b>Leave extra days</b> for sickness, car breakdowns, landslides, and over-hospitable locals. 3 breakdowns in 24h due to heat and rugged roads</li>
+            <li>Self-driving in KG is doable — many people stop to help. TJ has military checkpoints and required paperwork, harder</li>
+            <li>Uzbekistan: <b>no car needed</b>. Trains between all major cities work perfectly and cheaply</li>
+            <li>Contact: poet@pinetreepoet.com to get Musa's WhatsApp (recommended driver)</li>
+          </ul>
+        </div>
+        <a href="https://pinetreepoet.com/central-asia-road-trip-itinerary/" target="_blank" class="art-link">Read full article ↗</a>
+      </div>
+
+      <div class="art-card">
+        <div class="art-body">
+          <div class="art-source">Travels with Essie</div>
+          <div class="art-title">Central Asia Itinerary: A Complete 2-Week Guide to the 5 Stans</div>
+          <ul class="art-pts">
+            <li>Guided tour (Lupine Travel, all 5 Stans in 2 weeks): <b>~$2,300/person</b> including accommodation, all meals in UZ, ground transport, guides, visa support</li>
+            <li><b>Cash only everywhere</b> — USD crisp bills printed after 2013 only. Worn or older notes rejected at Turkmenistan exchanges</li>
+            <li><b>Non bread</b> (Uzbekistan) is sacred — never place upside down or drop on the floor. It is deeply respected across the region</li>
+            <li>Food tip from experience: <b>avoid chicken, stick to red meats</b>. Chicken caused food poisoning on this trip</li>
+            <li>Rumi Hotel, Dushanbe: their favourite hotel on the entire 5-Stans trip — recommended for your Dushanbe night</li>
+            <li>Border crossings are long and hot — carry toilet paper, wet wipes, and snacks in your day pack for every crossing</li>
+            <li>Bring <b>$1 and $5 USD bills</b> for small transactions in Uzbekistan. Public toilets cost ~5,000 som</li>
+          </ul>
+        </div>
+        <a href="https://travelswithessie.com/central-asia-itinerary/" target="_blank" class="art-link">Read full article ↗</a>
+      </div>
+
+    </div>
+
+    <!-- COUNTRY INFO CENTRES -->
+    <div class="res-sec-title">Country information centres</div>
+    <div class="cres-grid">
+
+      <div class="cres">
+        <div class="cres-hdr">🇰🇬 Kyrgyzstan</div>
+        <div class="cres-item">
+          <div class="cres-name">CBT Kyrgyzstan</div>
+          <div class="cres-desc">Community Based Tourism — main operator for horse treks, yurt stays, guided tours. Call or email for prices.</div>
+          <a href="https://cbtkyrgyzstan.kg" target="_blank" class="cres-a">cbtkyrgyzstan.kg ↗</a><br>
+          <span class="cres-desc">+996 770 443 021 · info@cbtkyrgyzstan.com</span>
+        </div>
+        <div class="cres-item">
+          <div class="cres-name">Journal of Nomads</div>
+          <div class="cres-desc">Best English-language guide for horse riding destinations and route planning</div>
+          <a href="https://www.journalofnomads.com/kyrgyzstan/" target="_blank" class="cres-a">journalofnomads.com ↗</a>
+        </div>
+        <div class="cres-item">
+          <div class="cres-name">Visit Kyrgyzstan (Official)</div>
+          <div class="cres-desc">Government tourism portal — visa info, regions, attractions</div>
+          <a href="https://www.visitkyrgyzstan.travel" target="_blank" class="cres-a">visitkyrgyzstan.travel ↗</a>
+        </div>
+        <div class="cres-item">
+          <div class="cres-name">Pamir Highway Hitchhikers</div>
+          <div class="cres-desc">Facebook group for real-time jeep sharing, border conditions, and Pamir road updates</div>
+          <a href="https://www.facebook.com/groups/pamircentralasia" target="_blank" class="cres-a">Facebook group ↗</a>
+        </div>
+      </div>
+
+      <div class="cres">
+        <div class="cres-hdr">🇹🇯 Tajikistan</div>
+        <div class="cres-item">
+          <div class="cres-name">PECTA Pamir</div>
+          <div class="cres-desc">Pamir Eco Cultural Tourism Association — local guides for Wakhan Corridor, Pamir tours</div>
+          <a href="https://pectapamir.com" target="_blank" class="cres-a">pectapamir.com ↗</a>
+        </div>
+        <div class="cres-item">
+          <div class="cres-name">Meta Travel</div>
+          <div class="cres-desc">Established operator for Pamir Highway jeep hire and organised tours</div>
+          <a href="https://meta-travel.com" target="_blank" class="cres-a">meta-travel.com ↗</a>
+        </div>
+        <div class="cres-item">
+          <div class="cres-name">Tajikistan e-Visa</div>
+          <div class="cres-desc">Apply online minimum 2 weeks before departure. ~$50. Print the visa — border expects a physical copy.</div>
+          <a href="https://evisa.tj" target="_blank" class="cres-a">evisa.tj ↗</a>
+        </div>
+        <div class="cres-item">
+          <div class="cres-name">Advantour Tajikistan</div>
+          <div class="cres-desc">Fann Mountains treks, Iskanderkul, Dushanbe tours with confirmed prices</div>
+          <a href="https://www.advantour.com/tajikistan" target="_blank" class="cres-a">advantour.com/tajikistan ↗</a>
+        </div>
+      </div>
+
+      <div class="cres">
+        <div class="cres-hdr">🇺🇿 Uzbekistan</div>
+        <div class="cres-item">
+          <div class="cres-name">Uzbekistan Travel (Official)</div>
+          <div class="cres-desc">Government tourism portal — visa-free info, Silk Road cities, transport</div>
+          <a href="https://uzbekistan.travel" target="_blank" class="cres-a">uzbekistan.travel ↗</a>
+        </div>
+        <div class="cres-item">
+          <div class="cres-name">GetYourGuide Uzbekistan</div>
+          <div class="cres-desc">Bookable tours with real-time prices and verified reviews for Samarkand, Bukhara, Khiva, Tashkent</div>
+          <a href="https://www.getyourguide.com/uzbekistan-l167/" target="_blank" class="cres-a">getyourguide.com/uzbekistan ↗</a>
+        </div>
+        <div class="cres-item">
+          <div class="cres-name">Afrosiyob Train Tickets</div>
+          <div class="cres-desc">Fast train Tashkent–Samarkand–Bukhara booking. Book ahead in peak season.</div>
+          <a href="https://uzrailpass.uz" target="_blank" class="cres-a">uzrailpass.uz ↗</a>
+        </div>
+        <div class="cres-item">
+          <div class="cres-name">Stantours</div>
+          <div class="cres-desc">Aral Sea expeditions, Uzbekistan and Kazakhstan multi-day tours</div>
+          <a href="https://stantours.com" target="_blank" class="cres-a">stantours.com ↗</a>
+        </div>
+      </div>
+
+      <div class="cres">
+        <div class="cres-hdr">🇰🇿 Kazakhstan</div>
+        <div class="cres-item">
+          <div class="cres-name">Kazakhstan Travel (Official)</div>
+          <div class="cres-desc">Government tourism portal — visa info, Almaty, steppe, national parks</div>
+          <a href="https://www.kazakhstan.travel" target="_blank" class="cres-a">kazakhstan.travel ↗</a>
+        </div>
+        <div class="cres-item">
+          <div class="cres-name">GetYourGuide Almaty</div>
+          <div class="cres-desc">Charyn Canyon day trips, Big Almaty Lake, Shymbulak tours with live pricing</div>
+          <a href="https://www.getyourguide.com/almaty-l4076/" target="_blank" class="cres-a">getyourguide.com/almaty ↗</a>
+        </div>
+        <div class="cres-item">
+          <div class="cres-name">Nukus / Aral Sea operator</div>
+          <div class="cres-desc">Hire 4x4 in Nukus for the Moynaq ship graveyard — arrange on arrival or via Stantours above</div>
+          <a href="https://stantours.com" target="_blank" class="cres-a">stantours.com ↗</a>
+        </div>
+        <div class="cres-item">
+          <div class="cres-name">Shymbulak Resort</div>
+          <div class="cres-desc">Gondola and summer hiking above Almaty — cable car tickets and schedule</div>
+          <a href="https://shymbulak.com" target="_blank" class="cres-a">shymbulak.com ↗</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- EXTRACTED DATA -->
+    <div class="res-sec-title">Key data extracted from research</div>
+    <div class="data-grid">
+
+      <div class="dcard">
+        <div class="dcard-title">🐎 Kyrgyzstan horse riding — real prices</div>
+        <div class="drow"><span class="drow-label">Horse rental (independent, per day)<div class="drow-note">Arrange direct at yurt camp</div></span><span class="drow-val">2,500 KGS<br>~$28 / ~€26</span></div>
+        <div class="drow"><span class="drow-label">Horseman/guide (per day, shared)<div class="drow-note">Mandatory — you cannot ride without one</div></span><span class="drow-val">3,000 KGS<br>~$33 / ~€31</span></div>
+        <div class="drow"><span class="drow-label">Yurt camp stay (per person/night)<div class="drow-note">Includes breakfast + dinner</div></span><span class="drow-val">2,500 KGS<br>~$28 / ~€26</span></div>
+        <div class="drow"><span class="drow-label">Direct at yurt camp (horse + horseman)<div class="drow-note">Journal of Nomads verified price</div></span><span class="drow-val">$25 horse<br>+ $30 guide</span></div>
+        <div class="drow"><span class="drow-label">Ala-Archa half day (packaged)<div class="drow-note">Per person, guide included</div></span><span class="drow-val">$25–$50</span></div>
+        <div class="drow"><span class="drow-label">Issyk-Kul valley 1 day (packaged)</span><span class="drow-val">$60–$90</span></div>
+        <div class="drow"><span class="drow-label">Song Kul 3 days (packaged)<div class="drow-note">CBT official price is $425 — shop around</div></span><span class="drow-val">$150–$425</span></div>
+        <div class="drow"><span class="drow-label">Tien Shan 5–7 days (packaged)</span><span class="drow-val">$400–$600</span></div>
+        <div class="drow"><span class="drow-label">Arslanbob 3-day CBT tour<div class="drow-note">Published price, all-inclusive</div></span><span class="drow-val">30,000 KGS<br>~€300</span></div>
+        <div class="drow"><span class="drow-label">Kel Suu Lake day trip<div class="drow-note">Border permit 1,000–2,000 KGS extra</div></span><span class="drow-val">1,000 KGS horse<br>+ 1,200–1,500 guide</span></div>
+      </div>
+
+      <div class="dcard">
+        <div class="dcard-title">🏔️ Kyrgyzstan mountain passes</div>
+        <div class="drow"><span class="drow-label">Kyzyl-Art Pass<div class="drow-note">Pamir Highway entry into Tajikistan · permit req.</div></span><span class="drow-val">4,280m <span class="dtag tag-hard">Hard</span></span></div>
+        <div class="drow"><span class="drow-label">Barskoon Pass<div class="drow-note">Issyk-Kul → south · Soviet monuments, Gagarin bust</div></span><span class="drow-val">3,756m <span class="dtag tag-mod">Mod</span></span></div>
+        <div class="drow"><span class="drow-label">Torugart Pass<div class="drow-note">Silk Road / China border · permit required</div></span><span class="drow-val">3,752m <span class="dtag tag-mod">Mod</span></span></div>
+        <div class="drow"><span class="drow-label">Too-Ashu Pass<div class="drow-note">Bishkek → Osh · hairpin bends, avalanche risk in winter</div></span><span class="drow-val">3,586m <span class="dtag tag-hard">Hard</span></span></div>
+        <div class="drow"><span class="drow-label">Shamsi Pass<div class="drow-note">Near Bishkek · connects to Chon-Kemin Valley, quiet</div></span><span class="drow-val">3,570m <span class="dtag tag-easy">Easy</span></span></div>
+        <div class="drow"><span class="drow-label">Ala-Bel Pass<div class="drow-note">Bishkek → Suusamyr Valley · good intro pass</div></span><span class="drow-val">3,184m <span class="dtag tag-easy">Easy</span></span></div>
+        <div class="dcard-title" style="margin-top:1.25rem">⚠️ Permits required</div>
+        <div class="drow"><span class="drow-label">Kel Suu Lake<div class="drow-note">Near China border · email CBT Naryn 2 weeks ahead</div></span><span class="drow-val">1,000–2,000 KGS</span></div>
+        <div class="drow"><span class="drow-label">Chatyr Kul Lake<div class="drow-note">Near China border · same process as Kel Suu</div></span><span class="drow-val">1,000–2,000 KGS</span></div>
+        <div class="drow"><span class="drow-label">Torugart Pass (China)<div class="drow-note">Border crossing — arrange through tour operator</div></span><span class="drow-val">Via operator</span></div>
+        <div class="dcard-title" style="margin-top:1.25rem">💡 Riding commands (Kyrgyz)</div>
+        <div class="drow"><span class="drow-label">Go / faster</span><span class="drow-val">"chu" / "chu chu"</span></div>
+        <div class="drow"><span class="drow-label">Stop</span><span class="drow-val">"trrrrrr" or "dak dak"</span></div>
+        <div class="drow"><span class="drow-label">Rain gear rule</span><span class="drow-val">NO ponchos — scares horses. Jacket only.</span></div>
+      </div>
+
+      <div class="dcard">
+        <div class="dcard-title">💰 Daily budgets &amp; key costs</div>
+        <div class="drow"><span class="drow-label">Budget backpacker (dorms, street food)<div class="drow-note">BucketListly Blog estimate, covers all 4 countries</div></span><span class="drow-val">$35–55/day</span></div>
+        <div class="drow"><span class="drow-label">Mid-range (guesthouses, sit-down meals)</span><span class="drow-val">$55–90/day</span></div>
+        <div class="drow"><span class="drow-label">Guided tour (all-inclusive, 5 Stans)<div class="drow-note">Lupine Travel price via Travels with Essie</div></span><span class="drow-val">~$2,300/person</span></div>
+        <div class="dcard-title" style="margin-top:1.25rem">🚍 Transport costs</div>
+        <div class="drow"><span class="drow-label">Almaty → Bishkek (Kordai border)<div class="drow-note">Marshrutka or shared taxi, 4–10h depending on border</div></span><span class="drow-val">$5–15</span></div>
+        <div class="drow"><span class="drow-label">Bishkek → Osh<div class="drow-note">Fly ~$30 (recommended). Bus/taxi = 8h+</div></span><span class="drow-val">$30 fly<br>$10–15 bus</span></div>
+        <div class="drow"><span class="drow-label">Khorog → Dushanbe<div class="drow-note">Marshrutka up to 16h, leaves early morning. Small plane option available</div></span><span class="drow-val">$10–15 bus<br>$50–80 fly</span></div>
+        <div class="drow"><span class="drow-label">Dushanbe → Samarkand<div class="drow-note">Via Penjikent border (now best option, reopened)</div></span><span class="drow-val">$10–20 shared taxi</span></div>
+        <div class="drow"><span class="drow-label">Uzbekistan city trains<div class="drow-note">Afrosiyob fast train Tashkent–Samarkand–Bukhara. Book ahead in summer</div></span><span class="drow-val">$5–15 per leg</span></div>
+        <div class="drow"><span class="drow-label">Tashkent → Almaty<div class="drow-note">Overnight fast train — comfortable, scenic steppe crossing</div></span><span class="drow-val">$25–50</span></div>
+        <div class="dcard-title" style="margin-top:1.25rem">🛂 Visas &amp; permits</div>
+        <div class="drow"><span class="drow-label">Tajikistan e-Visa<div class="drow-note">Apply at evisa.tj before departure. Print it.</div></span><span class="drow-val">$50</span></div>
+        <div class="drow"><span class="drow-label">GBAO Permit (Pamir Highway)<div class="drow-note">Required separately on top of e-Visa. Apply same time.</div></span><span class="drow-val">$20</span></div>
+        <div class="drow"><span class="drow-label">Total Tajikistan entry</span><span class="drow-val">$70</span></div>
+        <div class="dcard-title" style="margin-top:1.25rem">🌐 Essential websites</div>
+        <div class="drow"><span class="drow-label">Caravanistan<div class="drow-note">Best source for border crossing reports, visa updates, jeep partners</div></span><span class="drow-val"><a href="https://caravanistan.com" target="_blank" style="color:var(--gold)">caravanistan.com ↗</a></span></div>
+        <div class="drow"><span class="drow-label">Osh Guesthouse network<div class="drow-note">Hub for organising Pamir jeeps and finding co-travelers</div></span><span class="drow-val">Ask on arrival in Osh</span></div>
+        <div class="drow"><span class="drow-label">Airalo eSIM<div class="drow-note">Buy eSIM before arrival — works in KG, KZ, UZ. TJ patchy.</div></span><span class="drow-val"><a href="https://www.airalo.com" target="_blank" style="color:var(--gold)">airalo.com ↗</a></span></div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
 
 <!-- ADD STOP MODAL -->
@@ -961,24 +1300,24 @@ function addStop() {
 const tours=[
   {id:1,name:'Ala-Archa Gorge Hike',city:'Bishkek',country:'KG',type:['Nature','Adventure'],diff:'Easy',
    duration:'5–6 hours',costEur:20,costIsk:2860,
-   desc:'A canyon trail 40km from Bishkek cutting deep into the Tian Shan range. You reach a glacier viewpoint at 3,400m passing alpine meadows, a roaring river, and Tian Shan fir forests. No technical gear needed.',
-   includes:['Transport from Bishkek','Park entry fee','Local guide','Water']},
-  {id:2,name:'Issyk-Kul Nomadic Horseback Trek',city:'Issyk-Kul',country:'KG',type:['Adventure','Cultural'],diff:'Moderate',
-   duration:'2 days / 1 night',costEur:70,costIsk:10010,
-   desc:'Ride along the lake shore and up into the Tian Shan foothills with a nomad guide. Sleep in a yurt with a local family, eat fresh bread and lamb by the fire, and drink kumys at dawn.',
-   includes:['Horse + nomad guide','Yurt accommodation','All meals (incl. kumys)','Saddlebags for gear']},
-  {id:3,name:'Altyn Arashan Hot Springs Overnight',city:'Karakol',country:'KG',type:['Nature','Adventure'],diff:'Moderate',
-   duration:'2 days / 1 night',costEur:55,costIsk:7865,
-   desc:'Trek or ride a horse up the Arashan valley to natural hot springs at 2,500m with direct views of Palatka peak. Soak in outdoor thermal pools at altitude, sleep in a basic mountain hut, and return the next morning.',
-   includes:['Local guide','Optional horse hire (~€10 extra)','Hot springs access','Basic cabin accommodation']},
-  {id:4,name:'Song Kul Nomadic Expedition',city:'Song Kul Lake',country:'KG',type:['Cultural','Adventure'],diff:'Moderate',
-   duration:'2 days / 2 nights',costEur:90,costIsk:12870,
-   desc:'The definitive nomadic experience. 3,016m altitude, zero signal, zero electricity. Two nights with a nomad family, horseback riding on an open plateau, eagle demonstration, kumys tasting, and more stars than you have ever seen in your life.',
-   includes:['4x4 from Kochkor','Yurt accommodation (2 nights)','All meals','Horseback riding session','Eagle demonstration']},
-  {id:5,name:'Tian Shan Multi-Day Horse Trek',city:'Karakol',country:'KG',type:['Adventure'],diff:'Hard',
-   duration:'4–5 days',costEur:175,costIsk:25025,
-   desc:'A full wilderness horse trek crossing passes above 3,800m, camping in high meadows, and riding terrain no road reaches. Organised through CBT Kyrgyzstan — the most reputable local operator.',
-   includes:['Horse + experienced CBT guide','All camping equipment','All meals in the field','Park permits']},
+   desc:'Day hike 40km from Bishkek. A canyon trail through Tian Shan fir forests to a glacier viewpoint at 3,400m. Arrange transport independently from Bishkek (shared taxi ~500 KGS each way) and pay park entry at the gate. Guide optional but cheap.',
+   includes:['Park entry fee (pay at gate)','Shared taxi from Bishkek (~500 KGS each way)','No guide required — trail is clear']},
+  {id:2,name:'Chong-Kemin to Issyk-Kul — Independent',city:'Issyk-Kul',country:'KG',type:['Adventure','Cultural'],diff:'Moderate',
+   duration:'3 days / 2 nights',costEur:93,costIsk:13299,
+   desc:'Do this independently. Hire horses + horseman directly in Chong-Kemin village (~2,500 KGS/horse/day + 3,000 KGS/horseman/day shared). Sleep in homestays (~2,500 KGS/person/night with meals). Total for 3 days per person approx 9,000–11,000 KGS. CBT packaged version costs $425 — going direct saves ~$300/person.',
+   includes:['Horse hire direct: 2,500 KGS/horse/day','Horseman: 3,000 KGS/day (split 4 ways = 750 KGS each)','2 homestay nights: ~2,500 KGS/person/night with meals','1 night camping (bring sleeping bag liner)']},
+  {id:3,name:'Altyn Arashan Hot Springs — Independent',city:'Karakol',country:'KG',type:['Nature','Adventure'],diff:'Moderate',
+   duration:'1–2 days',costEur:36,costIsk:5148,
+   desc:'Hire horses at the trailhead in Karakol or arrange through your guesthouse — do NOT go through a packaged tour. Horse up the Arashan valley (6h) to hot spring pools at 2,500m. Sleep in the basic mountain cabin. Day 2 ride back. Your guesthouse in Karakol can connect you directly with horsemen.',
+   includes:['Horse direct: 2,500 KGS/horse/day','Horseman: 3,000 KGS/day (split 4)','Mountain cabin overnight: ~1,500 KGS/person','Hot springs access (small fee at the pool)']},
+  {id:4,name:'Song Kul — Independent',city:'Song Kul Lake',country:'KG',type:['Cultural','Adventure'],diff:'Moderate',
+   duration:'2–3 nights',costEur:119,costIsk:17017,
+   desc:'Go independent — this is the biggest saving on the trip. Take a 4x4 from Kochkor to the lake (hire in Kochkor, ~3,000–5,000 KGS for the car split 4 ways). Pay the yurt camp directly on arrival (2,500 KGS/person/night with meals). Hire horses at the camp for day rides (2,500 KGS/horse + 3,000 KGS horseman). CBT packaged: $425/person. Independent: ~$128/person. Saving: ~$297/person, ~$1,188 for your group of 4.',
+   includes:['4x4 Kochkor → Song Kul: ~4,000 KGS total (~1,000 KGS/person)','Yurt camp 2 nights: 2,500 KGS/person/night with meals','Horse day rides at camp: 2,500 KGS/horse/day','Horseman: 3,000 KGS/day split 4 ways','Eagle demonstration: arrange at camp, small extra fee']},
+  {id:5,name:'Tian Shan Multi-Day Horse Trek — Independent',city:'Karakol',country:'KG',type:['Adventure'],diff:'Hard',
+   duration:'4–5 days',costEur:204,costIsk:29172,
+   desc:'For a serious multi-day trek through high passes, hire a guide and horses directly through your guesthouse in Karakol or via CBT Karakol local office (not the website package). Ask for a horseman + guide combo. Budget 2,500 KGS/horse/day + 3,000–4,000 KGS/guide/day + ~2,500 KGS/night yurt or camp. CBT 8-day packaged: $975/person. 4–5 day independent: ~$200/person.',
+   includes:['Horse: 2,500 KGS/horse/day × 4–5 days','Guide/horseman: 3,500 KGS/day split 4 ways','Yurt/camp nights: 2,500 KGS/person/night','Arrange in Karakol — ask guesthouse owners directly']},
   {id:6,name:'Pamir Highway Full Route',city:'Osh → Khorog',country:'TJ',type:['Adventure'],diff:'Hard',
    duration:'4 days',costEur:160,costIsk:22880,
    desc:'The world\'s second-highest road. Ak-Baital Pass at 4,655m, Karakul Lake in a volcanic crater, the Afghan border visible across the Panj River, Murgab plateau at 3,600m, nomad homestays. One of the great journeys on earth — there is nothing like it.',
@@ -1029,6 +1368,21 @@ const tours=[
    includes:['4x4 from Nukus (split 4 ways)','Overnight guesthouse in Moynaq','Local guide','Entry to ship graveyard site']},
 ];
 
+const tourLinks = {
+  6: {url:'https://meta-travel.com', label:'Meta Travel'},
+  7: {url:'https://pectapamir.com', label:'PECTA Pamir'},
+  8: {url:'https://www.advantour.com/tajikistan/fann-mountains.htm', label:'Advantour'},
+  9: {url:'https://www.advantour.com/tajikistan', label:'Advantour'},
+  10: {url:'https://www.getyourguide.com/samarkand-l4080/', label:'GetYourGuide'},
+  11: {url:'https://www.getyourguide.com/samarkand-l4080/', label:'GetYourGuide'},
+  12: {url:'https://www.getyourguide.com/bukhara-l4082/', label:'GetYourGuide'},
+  13: {url:'https://www.getyourguide.com/khiva-l4083/', label:'GetYourGuide'},
+  14: {url:'https://www.getyourguide.com/tashkent-l4079/', label:'GetYourGuide'},
+  15: {url:'https://www.getyourguide.com/almaty-l4076/', label:'GetYourGuide'},
+  16: {url:'https://www.getyourguide.com/almaty-l4076/', label:'GetYourGuide'},
+  17: {url:'https://stantours.com', label:'Stantours'},
+};
+
 const typeColors={Adventure:'rgba(232,155,38,.15)',Cultural:'rgba(127,119,221,.15)',Nature:'rgba(29,158,117,.15)',Food:'rgba(196,163,90,.15)'};
 const typeText={Adventure:'#E89B26',Cultural:'#7F77DD',Nature:'#1D9E75',Food:'#C4A35A'};
 let activeCountry='all', activeType='all';
@@ -1060,6 +1414,7 @@ function renderTours() {
     const tags=t.type.map(tp=>`<span class="tc-tag" style="background:${typeColors[tp]};color:${typeText[tp]}">${tp}</span>`).join('');
     const inc=t.includes.map(i=>`<li>${i}</li>`).join('');
     const diffClass='diff-'+t.diff.toLowerCase();
+    const lnk=tourLinks[t.id];
     return `<div class="tc" style="border-top-color:${co.color}">
       <div class="tc-top">
         <div>
@@ -1078,6 +1433,7 @@ function renderTours() {
         <div><div class="tc-mv">€${t.costEur}</div><div class="tc-ml">In EUR</div></div>
         <div><div class="tc-mv" style="font-size:.82rem">${t.duration}</div><div class="tc-ml ${diffClass}">${t.diff}</div></div>
       </div>
+      ${lnk?`<a href="${lnk.url}" target="_blank" class="tc-link">Check prices on ${lnk.label} ↗</a>`:''}
     </div>`;
   }).join('');
 }
