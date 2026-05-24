@@ -198,7 +198,20 @@ textarea.fi{min-height:80px;resize:vertical;line-height:1.6}
 .pl-rx{background:rgba(224,92,92,.12);color:#C04040}
 .pl-must{background:rgba(29,158,117,.12);color:#1D9E75}
 .pl-nice{background:rgba(139,107,20,.1);color:#8B6B14}
-/* RESOURCES */
+/* MUST DO */
+.must-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-bottom:1.5rem}
+.mustc{background:var(--card);border:1px solid var(--b0);border-radius:10px;overflow:hidden}
+.mustc-hdr{padding:.75rem 1rem;border-bottom:1px solid var(--b0);border-top:3px solid transparent;display:flex;align-items:center;justify-content:space-between}
+.mustc-hdr-left{display:flex;align-items:center;gap:.5rem}
+.mustc-flag{font-size:1rem}
+.mustc-name{font-size:.8rem;font-weight:600;color:var(--t0)}
+.mustc-count{font-size:.65rem;color:var(--t2)}
+.mustc-list{list-style:none;padding:.375rem .75rem .5rem}
+.mustc-list li{font-size:.76rem;color:var(--t1);padding:.3rem 0 .3rem 1.5rem;border-bottom:1px solid var(--b0);position:relative;line-height:1.5}
+.mustc-list li:last-child{border:none}
+.mustc-list li::before{content:attr(data-n);position:absolute;left:0;color:var(--t2);font-size:.63rem;font-weight:700;top:.38rem;width:1.2rem;text-align:center}
+.mustc-list li b{color:var(--t0);font-weight:500}
+/* MUST DO */
 .res-sec-title{font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--t2);margin-bottom:.875rem;font-weight:600}
 .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.75rem}
 .art-card{background:var(--card);border:1px solid var(--b0);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
@@ -271,6 +284,88 @@ textarea.fi{min-height:80px;resize:vertical;line-height:1.6}
       <div class="oc"><div class="oc-v" style="color:var(--kz)" id="d-kz">5</div><div class="oc-l">Days in Kazakhstan</div></div>
     </div>
     <div class="ccards" id="ccards"></div>
+
+    <div class="must-grid">
+
+      <div class="mustc">
+        <div class="mustc-hdr" style="border-top-color:var(--kg)">
+          <div class="mustc-hdr-left"><span class="mustc-flag">🇰🇬</span><span class="mustc-name">Kyrgyzstan</span></div>
+          <span class="mustc-count">11 must-dos</span>
+        </div>
+        <ul class="mustc-list">
+          <li data-n="1"><b>Song Kul Lake</b> — 2 nights at 3,016m with nomad family. Zero signal, zero electricity. The best thing on this trip</li>
+          <li data-n="2"><b>Tian Shan horse trek</b> — multi-day above 3,200m from Karakol. Arrange independently through your guesthouse</li>
+          <li data-n="3"><b>Issyk-Kul southern shore</b> — yurt camp stay, horseback along the steppe, hot springs at Ak Bulak</li>
+          <li data-n="4"><b>Altyn Arashan hot springs</b> — ride or hike up the valley, soak in outdoor thermal pools at 2,800m overnight</li>
+          <li data-n="5"><b>Eagle hunting — Bokonbaevo</b> — authentic demonstration, few tourists. Only accessible through a driver who knows the family</li>
+          <li data-n="6"><b>Ala-Archa gorge</b> — day hike from Bishkek to glacier viewpoints at 3,400m. 40km from the city</li>
+          <li data-n="7"><b>Sulaiman-Too, Osh</b> — UNESCO sacred mountain. Climb for panoramic views over the city and the Fergana Valley</li>
+          <li data-n="8"><b>Jayma Bazaar, Osh</b> — 2,000-year-old covered market. No tourist section, just real life happening around you</li>
+          <li data-n="9"><b>Jeti-Oguz</b> — Seven Bulls red rock formations and Valley of Flowers near Karakol</li>
+          <li data-n="10"><b>Drink kumys</b> — fermented mare's milk with a nomad family at Song Kul or any yurt camp. Non-negotiable</li>
+          <li data-n="11"><b>Eat beshbarmak</b> — boiled lamb on flat pasta, eaten with hands. The national dish at its most authentic in a homestay</li>
+        </ul>
+      </div>
+
+      <div class="mustc">
+        <div class="mustc-hdr" style="border-top-color:var(--tj)">
+          <div class="mustc-hdr-left"><span class="mustc-flag">🇹🇯</span><span class="mustc-name">Tajikistan</span></div>
+          <span class="mustc-count">11 must-dos</span>
+        </div>
+        <ul class="mustc-list">
+          <li data-n="1"><b>Pamir Highway (M41)</b> — full 4-day route Osh to Khorog. One of the greatest road trips on earth. Non-negotiable</li>
+          <li data-n="2"><b>Ak-Baital Pass</b> — 4,655m. The highest point of the journey. Standing here is something you will not forget</li>
+          <li data-n="3"><b>Karakul Lake</b> — volcanic crater lake at 3,914m with 7,000m peaks behind it. Surreal blue in the brown desert</li>
+          <li data-n="4"><b>Wakhan Corridor</b> — stand at the Panj River with Afghanistan 30m across the water. Wave to people on the other side</li>
+          <li data-n="5"><b>Murgab overnight</b> — the most remote town on the route. 3,600m on the plateau. Nothing around for miles</li>
+          <li data-n="6"><b>Khorog border walk</b> — walk the riverbank path with Afghanistan literally visible across the Panj. Khorog Botanical Garden</li>
+          <li data-n="7"><b>Alauddin Lakes, Fann Mountains</b> — turquoise glacial lakes at altitude. Each one a different shade. Among the most beautiful things on this trip</li>
+          <li data-n="8"><b>Iskanderkul Lake</b> — Alexander the Great's lake. A still emerald reservoir at 2,195m. Brief stop or overnight</li>
+          <li data-n="9"><b>Bibi Fatima hot springs</b> — sacred hot spring in the Wakhan Valley. Stop on the Pamir route</li>
+          <li data-n="10"><b>Tea with a stranger</b> — someone will invite you in. Accept every time. The hospitality here is the real highlight of Tajikistan</li>
+          <li data-n="11"><b>Eat qurutob</b> — flatbread soaked in sour liquid qurt with herbs and onion. The national dish. Try it in Dushanbe</li>
+        </ul>
+      </div>
+
+      <div class="mustc">
+        <div class="mustc-hdr" style="border-top-color:var(--uz)">
+          <div class="mustc-hdr-left"><span class="mustc-flag">🇺🇿</span><span class="mustc-name">Uzbekistan</span></div>
+          <span class="mustc-count">11 must-dos</span>
+        </div>
+        <ul class="mustc-list">
+          <li data-n="1"><b>Registan at night, Samarkand</b> — visit in daylight once, then return at night when lit up. The second visit is the one you remember forever</li>
+          <li data-n="2"><b>Shah-i-Zinda, Samarkand</b> — narrow street of 14th century blue-tiled mausoleums. Go at dusk with fewer people</li>
+          <li data-n="3"><b>Cooking class, Samarkand</b> — make plov, samsa, shashlik in a family kitchen. Best €12 spent on the entire trip</li>
+          <li data-n="4"><b>Bukhara old city after 9pm</b> — when all day tourists have gone. Empty alleys, lantern light, genuinely ancient feeling</li>
+          <li data-n="5"><b>Lyab-i Hauz, Bukhara</b> — evening tea around the pool with locals and travelers. One of the great travel evenings in Central Asia</li>
+          <li data-n="6"><b>Kalon Minaret, Bukhara</b> — 12th century tower that Genghis Khan reportedly spared. The only thing he ever spared</li>
+          <li data-n="7"><b>Khiva at dawn</b> — arrive before any tour groups. The empty walled city in early morning light is the best photography moment of the trip</li>
+          <li data-n="8"><b>Islam Khoja Minaret, Khiva</b> — climb for 360° views over the entire walled city at sunset</li>
+          <li data-n="9"><b>Tashkent metro</b> — buy a ticket and ride the full line just to see the Soviet tile murals and chandeliers at each station</li>
+          <li data-n="10"><b>Plov Centre, Tashkent</b> — arrive at 8am sharp. The national dish at its absolute best. Sells out by noon without exception</li>
+          <li data-n="11"><b>Siab Bazaar, Samarkand</b> — spices, dried fruits, fresh non bread. The bread is sacred: never place upside down, never drop it</li>
+        </ul>
+      </div>
+
+      <div class="mustc">
+        <div class="mustc-hdr" style="border-top-color:var(--kz)">
+          <div class="mustc-hdr-left"><span class="mustc-flag">🇰🇿</span><span class="mustc-name">Kazakhstan</span></div>
+          <span class="mustc-count">8 must-dos</span>
+        </div>
+        <ul class="mustc-list">
+          <li data-n="1"><b>Aral Sea ship graveyard, Moynaq</b> — the most emotionally powerful stop on the entire trip. Rusting Soviet boats stranded in desert. Total silence. You will feel this one for a long time</li>
+          <li data-n="2"><b>Charyn Canyon</b> — day trip from Almaty. 300m deep, 90km long, carved rock formations that look genuinely alien. The Central Asian Grand Canyon</li>
+          <li data-n="3"><b>Big Almaty Lake</b> — turquoise alpine lake at 2,500m, 30km from the city. The color is impossible. Combine with Charyn in one driver day</li>
+          <li data-n="4"><b>Shymbulak gondola</b> — cable car to 2,260m above Almaty for summer wildflower meadows and views over the entire basin</li>
+          <li data-n="5"><b>Medeu skating rink</b> — walk down from Shymbulak. Site of 126 world speed skating records. Enormous rink in a mountain bowl</li>
+          <li data-n="6"><b>Green Bazaar, Almaty</b> — final shopping day. Dried apricots, walnuts, spices, and pomegranate to bring home from the trip</li>
+          <li data-n="7"><b>Try kazy</b> — smoked horse sausage, the distinctive Kazakh dish. An acquired taste absolutely worth acquiring at least once</li>
+          <li data-n="8"><b>Stand somewhere in the steppe</b> — find a spot with nothing visible in any direction. Kazakhstan's real gift. Nothing quite like the scale of it</li>
+        </ul>
+      </div>
+
+    </div>
+
     <div class="vsec">
       <h3>Visa requirements — Icelandic passport</h3>
       <div class="vgrid">
